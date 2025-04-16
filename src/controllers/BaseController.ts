@@ -7,34 +7,33 @@ export class BaseController {
     const { id } = req.params;
 
     try {
-      const resource = BaseService.get(Number(id))
+      const resource = BaseService.get(Number(id));
 
-      return Res.sendByType(res, 'found', undefined, resource)
+      return Res.sendByType(res, "found", undefined, resource);
     } catch (error) {
-      return Res.sendByType(res, 'internalError', error)
+      return Res.sendByType(res, "internalError", error);
     }
   };
 
   static getAll = async (_: Request, res: Response) => {
     try {
-      const resource = BaseService.getAll()
+      const resource = BaseService.getAll();
 
-      return Res.sendByType(res, 'found', undefined, resource)
+      return Res.sendByType(res, "found", undefined, resource);
     } catch (error) {
-      return Res.sendByType(res, 'internalError', error)
+      return Res.sendByType(res, "internalError", error);
     }
   };
-
 
   static create = async (req: Request, res: Response) => {
     const { name } = req.body;
 
     try {
-      const resource = await BaseService.create({name})
+      const resource = await BaseService.create({ name });
 
-      return Res.sendByType(res, 'created', undefined, resource)
+      return Res.sendByType(res, "created", undefined, resource);
     } catch (error) {
-      return Res.sendByType(res, 'internalError', error)
+      return Res.sendByType(res, "internalError", error);
     }
   };
 
@@ -43,11 +42,11 @@ export class BaseController {
     const { name } = req.body;
 
     try {
-      const resource = await BaseService.update(Number(id), {name})
+      const resource = await BaseService.update(Number(id), { name });
 
-      return Res.sendByType(res, 'updated', undefined, resource)
+      return Res.sendByType(res, "updated", undefined, resource);
     } catch (error) {
-      return Res.sendByType(res, 'internalError', error)
+      return Res.sendByType(res, "internalError", error);
     }
   };
 
@@ -55,11 +54,11 @@ export class BaseController {
     try {
       const { id } = req.params;
 
-      await BaseService.destroy(Number(id))
+      await BaseService.destroy(Number(id));
 
-      return Res.sendByType(res, 'deleted')
+      return Res.sendByType(res, "deleted");
     } catch (error) {
-      return Res.sendByType(res, 'internalError', error)
+      return Res.sendByType(res, "internalError", error);
     }
   };
 }

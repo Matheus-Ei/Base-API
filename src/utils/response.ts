@@ -1,6 +1,6 @@
-import { RESPONSES } from '../core/responses';
-import { TreatError } from './error';
-import { Response } from 'express';
+import { RESPONSES } from "../core/responses";
+import { TreatError } from "./error";
+import { Response } from "express";
 
 interface ResOptions {
   stringifyErrors?: boolean;
@@ -20,7 +20,7 @@ export class Res {
     status: number,
     err?: unknown,
     resource?: Resource<T>,
-    options: ResOptions = defaultOptions
+    options: ResOptions = defaultOptions,
   ) => {
     const error = options?.stringifyErrors ? TreatError.stringify(err) : err;
 
@@ -33,7 +33,7 @@ export class Res {
     type: keyof typeof RESPONSES,
     error?: unknown,
     resource?: Resource<T>,
-    options?: ResOptions
+    options?: ResOptions,
   ) => {
     return this.send(
       res,
@@ -41,7 +41,7 @@ export class Res {
       RESPONSES[type].status,
       error,
       resource,
-      options
+      options,
     );
   };
 }

@@ -1,5 +1,3 @@
 export class Base {
-  constructor(
-    public name: string
-  ) {}
+                                  constructor(public name: string) {}
 }
