@@ -26,10 +26,11 @@
     "sequelize": "6.21.3"
   },
   "devDependencies": {
-    "tsc": "2.0.4",
     "@types/node": "22.14.1",
+    "lefthook": "^1.11.10",
     "nodemon": "2.0.19",
     "ts-node": "10.9.2",
+    "tsc": "2.0.4",
     "typescript": "5.8.3"
   }
 }
