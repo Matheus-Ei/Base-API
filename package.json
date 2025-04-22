@@ -3,16 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",
     "format": "prettier --write ./src/",
-    "prepare": "npx lefthook install",
+    "prepare": "lefthook install",
     "start": "node dist/index.js"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "dependencies": {
     "@types/cors": "2.8.17",
     "@types/express": "5.0.1",
@@ -25,6 +28,7 @@
     "pino": "9.6.0",
     "sequelize": "6.21.3"
   },
+
   "devDependencies": {
     "@types/node": "22.14.1",
     "lefthook": "^1.11.10",
