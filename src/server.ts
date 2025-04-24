@@ -25,7 +25,7 @@ class Server {
   };
 
   routes = () => {
-    routes(this.app)
+    routes(this.app);
   };
 
   listen = () => {
