@@ -10,9 +10,8 @@ export class BaseService {
     return await BaseModel.findAll();
   };
 
-  static create = async (data: Base) => {
-    const { name } = data;
-    return await BaseModel.create({ name });
+  static create = async (data: Omit<Base, 'id'>) => {
+    return await BaseModel.create(data);
   };
 
   static update = async (id: number, data: Partial<Base>) => {

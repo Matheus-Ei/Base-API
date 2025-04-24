@@ -1,3 +1,6 @@
+import { Application } from "express";
 import { BaseRoute } from "./BaseRoute";
 
-export const ROUTES = [{ endpoint: "/base", router: BaseRoute.init() }];
+export const routes = (app: Application) => {
+  BaseRoute.init(app) 
+};

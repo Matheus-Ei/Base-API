@@ -1,19 +1,17 @@
-import "dotenv/config";
-
 import express, { Application } from "express";
-import { ROUTES } from "./routes";
-import cors from "cors";
+import { routes } from "./routes";
 import { ENV } from "./core/enviroment";
+import cors from "cors";
 
 class Server {
   public app: Application = express();
 
   constructor() {
-    this.middleware();
+    this.middlewares();
     this.routes();
   }
 
-  middleware = () => {
+  middlewares = () => {
     this.app.use(
       cors({
         origin: ["http://localhost"],
@@ -27,9 +25,7 @@ class Server {
   };
 
   routes = () => {
-    ROUTES.forEach(({ endpoint, router }) => {
-      this.app.use(endpoint, router);
-    });
+    routes(this.app)
   };
 
   listen = () => {
